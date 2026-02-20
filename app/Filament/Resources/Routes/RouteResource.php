@@ -19,7 +19,7 @@ class RouteResource extends Resource
 {
     protected static ?string $model = Route::class;
 
-    protected static string|BackedEnum|null $navigationIcon = Heroicon::OutlinedRectangleStack;
+    protected static string|BackedEnum|null $navigationIcon = Heroicon::OutlinedMap;
 
     public static function form(Schema $schema): Schema
     {

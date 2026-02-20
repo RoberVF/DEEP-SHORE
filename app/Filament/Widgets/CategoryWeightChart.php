@@ -9,6 +9,10 @@ class CategoryWeightChart extends ChartWidget
 {
     protected ?string $heading = 'Weight by Category (kg)';
 
+    protected int | string | array $columnSpan = 'full';
+
+    protected static ?int $sort = 2;
+
     protected function getData(): array
     {
         $data = Equipment::query()
