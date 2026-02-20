@@ -18,6 +18,8 @@ class BackpackResource extends Resource
 {
     protected static ?string $model = Backpack::class;
 
+    protected static ?int $navigationSort = 2;
+
     protected static string|BackedEnum|null $navigationIcon = Heroicon::OutlinedBriefcase;
 
     public static function form(Schema $schema): Schema

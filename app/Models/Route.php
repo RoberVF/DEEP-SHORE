@@ -8,8 +8,14 @@ use Illuminate\Database\Eloquent\Builder;
 
 class Route extends Model
 {
-    protected $fillable = ['name', 'backpack_id', 'duration_days', 'location', 'date', 'user_id'];
+    protected $fillable = ['name', 'backpack_id', 'duration_days', 'location', 'date', 'user_id', 'status', 'estimated_kcal', 'coordinates'];
 
+    protected $casts = [
+        'date' => 'date',
+        'status' => \App\Enums\RouteStatus::class,
+        'estimated_kcal' => 'integer',
+        'duration_days' => 'integer',
+    ];
 
     protected static function booted(): void
     {

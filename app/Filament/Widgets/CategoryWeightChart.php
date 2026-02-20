@@ -8,10 +8,8 @@ use Filament\Widgets\ChartWidget;
 class CategoryWeightChart extends ChartWidget
 {
     protected ?string $heading = 'Weight by Category (kg)';
-
-    protected int | string | array $columnSpan = 'full';
-
-    protected static ?int $sort = 2;
+    protected static ?int $sort = 3;
+    protected ?string $maxHeight = '300px';
 
     protected function getData(): array
     {
