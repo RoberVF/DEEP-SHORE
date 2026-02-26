@@ -38,10 +38,22 @@ return [
             'report' => false,
         ],
 
+        'supabase' => [
+            'driver' => 's3',
+            'key' => env('SUPABASE_BUCKET_ACCESS_KEY_ID'),
+            'secret' => env('SUPABASE_BUCKET_SECRET_ACCESS_KEY'),
+            'region' => env('SUPABASE_BUCKET_REGION'),
+            'bucket' => env('SUPABASE_BUCKET_NAME'),
+            'endpoint' => env('SUPABASE_BUCKET_ENDPOINT'),
+            'url' => env('SUPABASE_URL'),
+            'use_path_style_endpoint' => true,
+            'throw' => true,
+        ],
+
         'public' => [
             'driver' => 'local',
             'root' => storage_path('app/public'),
-            'url' => rtrim(env('APP_URL', 'http://localhost'), '/').'/storage',
+            'url' => rtrim(env('APP_URL', 'http://localhost'), '/') . '/storage',
             'visibility' => 'public',
             'throw' => false,
             'report' => false,
@@ -76,5 +88,7 @@ return [
     'links' => [
         public_path('storage') => storage_path('app/public'),
     ],
+
+
 
 ];

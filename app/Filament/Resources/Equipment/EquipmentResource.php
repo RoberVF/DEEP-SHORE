@@ -6,9 +6,12 @@ use App\Filament\Resources\Equipment\Pages\CreateEquipment;
 use App\Filament\Resources\Equipment\Pages\EditEquipment;
 use App\Filament\Resources\Equipment\Pages\ListEquipment;
 use App\Filament\Resources\Equipment\Schemas\EquipmentForm;
+use App\Filament\Resources\Equipment\Schemas\EquipmentInfolist;
 use App\Filament\Resources\Equipment\Tables\EquipmentTable;
 use App\Models\Equipment;
 use BackedEnum;
+use Filament\Infolists\Components\ImageEntry;
+use Filament\Infolists\Components\TextEntry;
 use Filament\Resources\Resource;
 use Filament\Schemas\Schema;
 use Filament\Support\Icons\Heroicon;
@@ -45,5 +48,10 @@ class EquipmentResource extends Resource
             'create' => CreateEquipment::route('/create'),
             'edit' => EditEquipment::route('/{record}/edit'),
         ];
+    }
+
+    public static function infolist(Schema $schema): Schema
+    {
+        return EquipmentInfolist::configure($schema);
     }
 }

@@ -8,7 +8,7 @@ use Illuminate\Database\Eloquent\Builder;
 
 class Equipment extends Model
 {
-    protected $fillable = ['name', 'brand', 'color', 'weight_grams', 'category', 'user_id', 'condition', 'price', 'last_maintained_at'];
+    protected $fillable = ['name', 'brand', 'color', 'weight_grams', 'category', 'user_id', 'condition', 'price', 'last_maintained_at', 'image_path', 'technical_notes', 'is_essential'];
 
     protected $casts = [
         'category' => \App\Enums\EquipmentCategory::class,

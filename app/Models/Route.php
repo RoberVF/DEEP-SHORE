@@ -52,4 +52,12 @@ class Route extends Model
             'id'
         );
     }
+
+    public function getMgrsCoordinateAttribute(): string
+    {
+        if (!$this->coordinates) return 'N/A';
+
+        // De momento placeholder
+        return "28R BS 12345 67890";
+    }
 }
