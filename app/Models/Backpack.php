@@ -8,7 +8,14 @@ use Illuminate\Database\Eloquent\Builder;
 
 class Backpack extends Model
 {
-    protected $fillable = ['name', 'description', 'user_id'];
+    protected $fillable = [
+        'name',
+        'description',
+        'brand',
+        'capacity_liters',
+        'max_weight_grams',
+        'user_id'
+    ];
 
     protected static function booted(): void
     {
